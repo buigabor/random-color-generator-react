@@ -24,7 +24,7 @@ const StyledSpan = styled.span`
 	margin: ${(props) => (props.margin ? props.margin : '0px')};
 `;
 
-export default function AppHelper({ onSetCanvas, canvas }) {
+export default function AppHelper({ onSetCanvas, canvas, generateHexcode }) {
 	if (canvas) {
 		return <Canvas />;
 	}
@@ -37,7 +37,7 @@ export default function AppHelper({ onSetCanvas, canvas }) {
 				</StyledSpan>
 				<StyledSpan color='#51c2d5'>Generator</StyledSpan>
 			</H1>
-			<Home onSetCanvas={onSetCanvas} />
+			<Home generateHexcode={generateHexcode} onSetCanvas={onSetCanvas} />
 		</StyledApp>
 	);
 }

@@ -37,11 +37,11 @@ const Alert = styled.div`
 	box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
 `;
 
-function generateHexcode() {
-	return '#' + Math.floor(Math.random() * 16777215).toString(16);
-}
+// function generateHexcode() {
+// 	return '#' + Math.floor(Math.random() * 16777215).toString(16);
+// }
 
-export default function Home({ onSetCanvas }) {
+export default function Home({ onSetCanvas, generateHexcode }) {
 	const [color, setColor] = useState('#6a7dfa');
 	const [clicked, setClicked] = useState(false);
 	const [size, setSize] = useState('200x200');

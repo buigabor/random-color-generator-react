@@ -4,17 +4,20 @@ import AppHelper from './components/AppHelper';
 function App() {
 	const [canvas, setCanvas] = useState(false);
 
+	function generateHexcode() {
+		return '#' + Math.floor(Math.random() * 16777215).toString(16);
+	}
+
 	useEffect(() => {
 		if (canvas) {
 			const FPS = 60;
 			const squareSize = 200;
 			let squareX, squareY;
 			let squareVelocityX, squareVelocityY;
-			let viewport, context;
 
 			// load viewport
-			viewport = document.getElementById('viewport');
-			context = viewport.getContext('2d');
+			const viewport = document.getElementById('viewport');
+			const context = viewport.getContext('2d');
 
 			context.canvas.width = window.innerWidth;
 			context.canvas.height = window.innerHeight;
@@ -29,8 +32,8 @@ function App() {
 			squareY = viewport.height / 2;
 
 			// random starting speed (50 - 100)
-			squareVelocityX = Math.floor(Math.random() * 101 + 200) / FPS;
-			squareVelocityY = Math.floor(Math.random() * 101 + 200) / FPS;
+			squareVelocityX = Math.floor(Math.random() * 101 + 250) / FPS;
+			squareVelocityY = Math.floor(Math.random() * 101 + 250) / FPS;
 
 			// random direction
 
@@ -42,44 +45,55 @@ function App() {
 				squareVelocityY = -squareVelocityY;
 			}
 			// update function
-
+			let color = '#6a7dfa';
 			function update() {
 				// move the ball
 				squareX += squareVelocityX;
 				squareY += squareVelocityY;
 				// bounce ball off the wall
 
-				if (squareX - squareSize / 2 < 0 && squareVelocityX < 0) {
-					squareVelocityX = -squareVelocityX;
-				}
-
-				if (squareX + squareSize / 2 > viewport.width && squareVelocityX > 0) {
-					squareVelocityX = -squareVelocityX;
-				}
-
-				if (squareY - squareSize / 2 < 0 && squareVelocityY < 0) {
-					squareVelocityY = -squareVelocityY;
-				}
-
-				if (squareY + squareSize / 2 > viewport.height && squareVelocityY > 0) {
-					squareVelocityY = -squareVelocityY;
-				}
-
 				// draw background and square
 				context.fillStyle = '#f8f1f1';
 				context.fillRect(0, 0, window.innerWidth, window.innerHeight);
-				context.fillStyle = '#6a7dfa';
+
+				context.fillStyle = color;
 				context.fillRect(
 					squareX - squareSize / 2,
 					squareY - squareSize / 2,
 					squareSize,
 					squareSize,
 				);
+
+				if (squareX - squareSize / 2 < 0 && squareVelocityX < 0) {
+					squareVelocityX = -squareVelocityX;
+					color = generateHexcode();
+				}
+
+				if (squareX + squareSize / 2 > viewport.width && squareVelocityX > 0) {
+					squareVelocityX = -squareVelocityX;
+					color = generateHexcode();
+				}
+
+				if (squareY - squareSize / 2 < 0 && squareVelocityY < 0) {
+					squareVelocityY = -squareVelocityY;
+					color = generateHexcode();
+				}
+
+				if (squareY + squareSize / 2 > viewport.height && squareVelocityY > 0) {
+					squareVelocityY = -squareVelocityY;
+					color = generateHexcode();
+				}
 			}
 		}
 	}, [canvas]);
 
-	return <AppHelper canvas={canvas} onSetCanvas={setCanvas} />;
+	return (
+		<AppHelper
+			generateHexcode={generateHexcode}
+			canvas={canvas}
+			onSetCanvas={setCanvas}
+		/>
+	);
 }
 
 export default App;
