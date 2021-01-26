@@ -1,36 +1,36 @@
 .App {
-	text-align: center;
+	/* text-align: center;
 	height: 100vh;
 	background-color: #f8f1f1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: column; */
 }
 
 h1 {
-	font-size: 3.4rem;
-	margin-top: -3rem;
+	/* font-size: 3.4rem;
+	margin-top: -3rem; */
 }
 
 h2 {
-	height: 1rem;
+	/* height: 1rem;
 	font-size: 2rem;
-	transition: all 0.4s;
+	transition: all 0.4s; */
 }
 
 .square {
-	background-color: white;
+	/* background-color: white;
 	width: 200px;
 	height: 200px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	margin-top: 1.5rem;
 	margin-bottom: 3rem;
-	transition: all 0.4s;
+	transition: all 0.4s; */
 }
 
 .generate-color {
-	color: #433d3c;
+	/* color: #433d3c;
 	text-transform: uppercase;
 	background: #ffffff;
 	padding: 20px;
@@ -41,20 +41,20 @@ h2 {
 	outline: none;
 	font-weight: bold;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-	transition: all 0.4s;
+	transition: all 0.4s; */
 }
 
 .color-form {
-	display: flex;
+	/* display: flex;
 	position: absolute;
 	top: 15rem;
 	left: 5rem;
 	flex-direction: column;
-	gap: 10px;
+	gap: 10px; */
 }
 
 .color-btn {
-	margin-top: 0.5rem;
+	/* margin-top: 0.5rem;
 	width: 5.5rem;
 	color: #fff;
 	border: none;
@@ -65,28 +65,28 @@ h2 {
 	cursor: pointer;
 	outline: none;
 	font-weight: bold;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
 
 .clear-btn {
-	background: #e95252;
-	margin-left: auto;
+	/* background: #e95252;
+	margin-left: auto; */
 }
 
 .color-btn-wrapper {
-	display: flex;
+	/* display: flex;
 	flex-grow: 1;
-	gap: 20px;
+	gap: 20px; */
 }
 
 input {
-	width: 200px;
+	/* width: 200px;
 	background: #fff;
 	font: inherit;
 	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 	border: 0;
 	outline: 0;
-	padding: 10px 6px;
+	padding: 10px 6px; */
 }
 
 input:focus::-webkit-input-placeholder {
@@ -130,7 +130,7 @@ input::placeholder {
 }
 
 label {
-	align-self: flex-start;
+	/* align-self: flex-start;
 	font-size: 1.2rem;
-	font-weight: 600;
+	font-weight: 600; */
 }
