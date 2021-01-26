@@ -37,9 +37,28 @@ const Alert = styled.div`
 	box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
 `;
 
-// function generateHexcode() {
-// 	return '#' + Math.floor(Math.random() * 16777215).toString(16);
-// }
+const IconWrapper = styled.div`
+	position: relative;
+	left: 11rem;
+`;
+
+const ClickMe = styled.span`
+	font-size: 1.5rem;
+	font-weight: 400;
+	display: inline-block;
+	transform: rotate(40deg);
+	font-family: 'Indie Flower', cursive;
+	transition: all 0.55s;
+`;
+
+const Icon = styled.i`
+	font-size: 2rem;
+	position: relative;
+	top: 2.2rem;
+	right: 4.8rem;
+	transform: rotate(-40deg);
+	transition: all 0.55s;
+`;
 
 export default function Home({ onSetCanvas, generateHexcode }) {
 	const [color, setColor] = useState('#6a7dfa');
@@ -56,6 +75,16 @@ export default function Home({ onSetCanvas, generateHexcode }) {
 		<>
 			<Alert style={{ display: alertMode }}>{alertText}</Alert>
 			<H2 style={{ color: color }}>{clicked ? hex : ''}</H2>
+			<IconWrapper>
+				<ClickMe style={{ color: clicked ? color : '#ec4646' }}>
+					Click Me!
+				</ClickMe>
+				<Icon
+					style={{ color: clicked ? color : '#ec4646' }}
+					className='fas fa-long-arrow-alt-left'
+				/>
+			</IconWrapper>
+
 			<Square
 				style={{ backgroundColor: color, width: width, height: height }}
 				onClick={() => {

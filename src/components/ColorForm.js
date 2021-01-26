@@ -25,6 +25,12 @@ const ParamsInput = styled.input`
 	border: 0;
 	outline: 0;
 	padding: 10px 6px;
+	&::placeholder {
+		opacity: 0.6;
+	}
+	&:focus::placeholder {
+		color: transparent;
+	}
 `;
 
 const ButtonsWrapper = styled.div`

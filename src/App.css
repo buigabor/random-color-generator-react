@@ -89,7 +89,7 @@ input {
 	padding: 10px 6px; */
 }
 
-input:focus::-webkit-input-placeholder {
+/* input:focus::-webkit-input-placeholder {
 	color: transparent;
 }
 
@@ -107,9 +107,9 @@ input:focus::-ms-input-placeholder {
 
 input:focus::placeholder {
 	color: transparent;
-}
+} */
 
-input::-webkit-input-placeholder {
+/* input::-webkit-input-placeholder {
 	opacity: 0.6;
 }
 
@@ -127,10 +127,17 @@ input::-ms-input-placeholder {
 
 input::placeholder {
 	opacity: 0.6;
-}
+} */
 
 label {
 	/* align-self: flex-start;
 	font-size: 1.2rem;
 	font-weight: 600; */
+}
+
+.fas {
+	/* font-size: 1rem;
+	position: relative;
+	top: 3rem;
+	right: 3rem; */
 }
