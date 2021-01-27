@@ -18,16 +18,17 @@ const GenerateColorButton = styled.button`
 
 export default function GenerateColor({
 	color,
-	hex,
 	onSetClicked,
 	onSetColor,
+	generateHexcode,
 }) {
 	return (
 		<GenerateColorButton
 			className='generate-color'
 			style={{ borderColor: color, color: color }}
 			onClick={() => {
-				onSetColor(hex);
+				// onSetHex();
+				onSetColor(generateHexcode());
 				onSetClicked(true);
 			}}
 		>

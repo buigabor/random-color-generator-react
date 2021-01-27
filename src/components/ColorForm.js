@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const ColorParamsForm = styled.form`
 	display: flex;
 	position: absolute;
-	top: 14rem;
+	top: 16rem;
 	left: 5rem;
 	flex-direction: column;
 	gap: 10px;
